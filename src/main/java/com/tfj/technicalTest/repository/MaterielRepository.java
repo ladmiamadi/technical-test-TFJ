@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface MaterielRepository extends JpaRepository<Materiel, Integer> {
 
-    @Query("SELECT count nom As Materiel From materiel ")
+    @Query(value = "SELECT nom AS Materiel, COUNT(nom) AS Quantite from materiel pd INNER JOIN inventaire cd ON cd.materiel_id = pd.materiel_id GROUP BY nom", nativeQuery = true)
     List<Materiel> findMaterialsQuantity();
 
 }
