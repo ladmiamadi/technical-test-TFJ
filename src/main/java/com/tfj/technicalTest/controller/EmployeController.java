@@ -12,7 +12,7 @@ public class EmployeController {
     @Autowired
     private EmployeRepository employeRepository;
 
-    @PostMapping("add-employer")
+    @PostMapping("/add-employer")
     public Employe createEmploye(@RequestBody Employe employe) {
         return employeRepository.save(employe);
     }

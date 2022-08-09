@@ -18,22 +18,22 @@ public class MaterielController {
         return materielRepository.findAll();
     }
 
-    @GetMapping("get-materiel/{id}")
+    @GetMapping("/get-materiel/{id}")
     public Materiel getMaterialById(@PathVariable(value = "id") Integer id) {
         return materielRepository.findById(id).orElseThrow(() -> new NotFoundMaterielException("Id "+ id + " not found in database"));
     }
 
-    @PostMapping("add-materiel")
+    @PostMapping("/add-materiel")
     public Materiel createMateriel(@RequestBody Materiel materiel) {
         return materielRepository.save(materiel);
     }
 
-    @PutMapping("update-materiel")
+    @PutMapping("/update-materiel")
     public Materiel updateMateriel(@RequestBody Materiel materiel) {
         return materielRepository.save(materiel);
     }
 
-    @DeleteMapping("delete-materiel/{id}")
+    @DeleteMapping("/delete-materiel/{id}")
     public void deleteMateriel (@PathVariable(value = "id") Integer id) throws NotFoundMaterielException{
         Materiel materiel = materielRepository.findById(id).orElseThrow(() -> new NotFoundMaterielException("Id "+ id + " not found in database"));
 

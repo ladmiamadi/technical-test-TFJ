@@ -31,5 +31,5 @@ public class Magasin {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    List<Employe> comments = new ArrayList<>();
+    List<Employe> employe = new ArrayList<>();
 }

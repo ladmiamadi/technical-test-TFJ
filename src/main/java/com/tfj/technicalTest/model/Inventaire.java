@@ -24,7 +24,7 @@ public class Inventaire {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    List<Materiel> comments = new ArrayList<>();
+    List<Materiel> materiels= new ArrayList<>();
 
     @OneToOne(
             cascade = CascadeType.ALL
